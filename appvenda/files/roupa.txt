@@ -1,0 +1,3 @@
+004;camiseta regata;true;50;P;branco;camisa
+005;camisa de manga;true;75;M;azul;camisa
+006;calça social;true;100;G;preta;calça

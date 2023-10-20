@@ -1,0 +1,6 @@
+001;calçado casual;true;100;38;branco;adidas;C
+002;calçado esportivo;true;150;40;azul;nike;C
+003;calçado social;true;200;42;preto;mrcat;C
+004;camiseta regata;true;50;P;branco;camisa;R
+005;camisa de manga;true;75;M;azul;camisa;R
+006;calça social;true;100;G;preta;calça;R
