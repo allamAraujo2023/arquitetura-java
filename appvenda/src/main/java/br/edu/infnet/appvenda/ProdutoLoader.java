@@ -10,9 +10,11 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appvenda.model.domain.Calcado;
-import br.edu.infnet.appvenda.model.domain.Roupa;
 import br.edu.infnet.appvenda.model.domain.Produto;
+import br.edu.infnet.appvenda.model.domain.Roupa;
+import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.ProdutoService;
+import br.edu.infnet.appvenda.model.service.VendedorService;
 
 @Order(2)
 @Component
@@ -20,6 +22,9 @@ public class ProdutoLoader implements ApplicationRunner {
 	
 	@Autowired
 	private ProdutoService produtoService;
+	
+	@Autowired
+	private VendedorService vendedorService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -31,6 +36,8 @@ public class ProdutoLoader implements ApplicationRunner {
 
 		String[] campos = null;
 
+		Vendedor vendedor = new Vendedor();
+		
 		while(linha != null) {
 			
 			campos = linha.split(";");
@@ -49,6 +56,9 @@ public class ProdutoLoader implements ApplicationRunner {
 				calcado.setCor(campos[5]);
 				calcado.setMarca(campos[6]);
 				
+				vendedor.setId(Integer.valueOf(campos[8]));
+				calcado.setVendedor(vendedor);
+				
 				produtoService.incluir(calcado);
 				
 				break;
@@ -65,6 +75,9 @@ public class ProdutoLoader implements ApplicationRunner {
 				roupa.setCor(campos[5]);
 				roupa.setTipo(campos[6]);
 				
+				vendedor.setId(Integer.valueOf(campos[8]));
+				roupa.setVendedor(vendedor);
+				
 				produtoService.incluir(roupa);
 				
 				break;
@@ -75,9 +88,13 @@ public class ProdutoLoader implements ApplicationRunner {
 									
 			linha = leitura.readLine();
 		}
-
-		for(Produto produto: produtoService.obterLista()) {
-			System.out.println("[Produto] " + produto);			
+		
+		for(Vendedor vendedorTest: vendedorService.obterLista()) {
+			
+			for(Produto produto: produtoService.obterLista(vendedorTest)) {
+				
+				System.out.println("[Produto] " + produto);			
+			}
 		}
 		
 		leitura.close();

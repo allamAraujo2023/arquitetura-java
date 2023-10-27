@@ -1,5 +1,10 @@
 package br.edu.infnet.appvenda.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="TCalcado")
 public class Calcado extends Produto {
 
 	private int numero;
@@ -7,7 +12,7 @@ public class Calcado extends Produto {
 	private String cor;
 	
 	private String marca;
-	
+	                                                                
 
 	@Override
 	public String toString() {
