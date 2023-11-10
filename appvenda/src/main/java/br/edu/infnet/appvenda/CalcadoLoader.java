@@ -3,6 +3,8 @@ package br.edu.infnet.appvenda;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+import javax.validation.ConstraintViolationException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -48,7 +50,14 @@ public class CalcadoLoader implements ApplicationRunner {
 			vendedor.setId(Integer.parseInt(campos[7]));
 			calcado.setVendedor(vendedor);
 			
-			calcadoService.incluir(calcado);
+			try {
+				
+				calcadoService.incluir(calcado);
+				
+			}  catch (ConstraintViolationException e) {
+				
+				FileLogger.logException("[Calcado] " + vendedor + " - " + e.getMessage());
+			}
 			
 			linha = leitura.readLine();
 		}

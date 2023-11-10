@@ -23,4 +23,15 @@ public class RoupaService {
 		
 		return (Collection<Roupa>) roupaRepository.findAll();
 	}
+	
+	public Long obterQtde() {	
+		
+		return roupaRepository.count();
+	}
+	
+	public void excluir(Integer id) {
+		
+		roupaRepository.deleteById(id);
+	}
+	
 }

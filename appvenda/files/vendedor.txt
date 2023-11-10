@@ -1,4 +1,4 @@
-Paulo Soares;62513662067;paulo@soares.com
-Pedro da Silva;73641616000;pedro@silva.com
-Fernada moreira;45143948070;fernanda@moreira.com
-Rafaela santos;88507796079;rafaela@santos.com
+Paulo Soares;123.123.123-12;paulo@soares.com;20010020
+Pedro da Silva;456.456.456-45;pedro@silva.com;20010020
+Fernada moreira;345.345.345-34;fernanda@moreira.com;20010020
+Rafaela santos;234.234.234-23;rafaela@santos.com;20010020

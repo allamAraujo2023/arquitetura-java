@@ -1,0 +1,20 @@
+nov 10, 2023 11:17:24 AM br.edu.infnet.appvenda.FileLogger logException
+SEVERE: [VENDEDOR] id (null) - nome (Paulo Soares) - cpf (62513662067) - email (paulo@soares.com) - endereco (Cep - 20010-020 bairro - Centro uf - RJ) - produtos (0) - Validation failed for classes [br.edu.infnet.appvenda.model.domain.Vendedor] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='deve corresponder a "\d{3}\.\d{3}\.\d{3}-\d{2}"', propertyPath=cpf, rootBeanClass=class br.edu.infnet.appvenda.model.domain.Vendedor, messageTemplate='{javax.validation.constraints.Pattern.message}'}
+]
+nov 10, 2023 11:17:25 AM br.edu.infnet.appvenda.FileLogger logException
+SEVERE: [VENDEDOR] id (null) - nome (Pedro da Silva) - cpf (73641616000) - email (pedro@silva.com) - endereco (Cep - 20010-020 bairro - Centro uf - RJ) - produtos (0) - Validation failed for classes [br.edu.infnet.appvenda.model.domain.Vendedor] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='deve corresponder a "\d{3}\.\d{3}\.\d{3}-\d{2}"', propertyPath=cpf, rootBeanClass=class br.edu.infnet.appvenda.model.domain.Vendedor, messageTemplate='{javax.validation.constraints.Pattern.message}'}
+]
+nov 10, 2023 11:17:25 AM br.edu.infnet.appvenda.FileLogger logException
+SEVERE: [VENDEDOR] id (null) - nome (Fernada moreira) - cpf (45143948070) - email (fernanda@moreira.com) - endereco (Cep - 20010-020 bairro - Centro uf - RJ) - produtos (0) - Validation failed for classes [br.edu.infnet.appvenda.model.domain.Vendedor] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='deve corresponder a "\d{3}\.\d{3}\.\d{3}-\d{2}"', propertyPath=cpf, rootBeanClass=class br.edu.infnet.appvenda.model.domain.Vendedor, messageTemplate='{javax.validation.constraints.Pattern.message}'}
+]
+nov 10, 2023 11:17:26 AM br.edu.infnet.appvenda.FileLogger logException
+SEVERE: [VENDEDOR] id (null) - nome (Rafaela santos) - cpf (88507796079) - email (rafaela@santos.com) - endereco (Cep - 20010-020 bairro - Centro uf - RJ) - produtos (0) - Validation failed for classes [br.edu.infnet.appvenda.model.domain.Vendedor] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='deve corresponder a "\d{3}\.\d{3}\.\d{3}-\d{2}"', propertyPath=cpf, rootBeanClass=class br.edu.infnet.appvenda.model.domain.Vendedor, messageTemplate='{javax.validation.constraints.Pattern.message}'}
+]

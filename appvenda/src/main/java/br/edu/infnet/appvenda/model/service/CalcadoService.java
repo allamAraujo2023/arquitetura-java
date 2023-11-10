@@ -23,4 +23,15 @@ public class CalcadoService {
 		
 		return (Collection<Calcado>) calcadoRepository.findAll();
 	}
+	
+	public Long obterQtde() {	
+		
+		return calcadoRepository.count();
+	}
+	
+	public void excluir(Integer id) {
+		
+		calcadoRepository.deleteById(id);
+	}
+	
 }

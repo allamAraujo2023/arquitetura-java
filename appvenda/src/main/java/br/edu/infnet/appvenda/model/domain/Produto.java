@@ -1,5 +1,6 @@
 package br.edu.infnet.appvenda.model.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +10,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.PositiveOrZero;
 
 @Entity
 @Table(name ="TProduto")
@@ -21,10 +24,13 @@ public class Produto {
 	
 	private String descricao;
 	
+	@PositiveOrZero
 	private int codigo;
 	
+	@Positive
 	private float preco;
 	
+	@Column(columnDefinition = "boolean default false")
 	private boolean estoque;
 	
 	@ManyToOne
@@ -33,7 +39,9 @@ public class Produto {
 	
 	@Override
 	public String toString() {
-		return String.format("%d - %s - %d - %.2f - %s", id, descricao, codigo, preco, estoque);
+		
+		return String.format("id (%d) - descricao (%s) - codigo (%d) - preco (%.2f) - estoque (%s) - vendedor [%s]", 
+				id, descricao, codigo, preco, estoque, vendedor);
 	}
 
 	public String getDescricao() {
