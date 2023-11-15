@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import br.edu.infnet.appvenda.model.service.CalcadoService;
 import br.edu.infnet.appvenda.model.service.ProdutoService;
 import br.edu.infnet.appvenda.model.service.RoupaService;
+import br.edu.infnet.appvenda.model.service.InformacaoService;
 import br.edu.infnet.appvenda.model.service.VendedorService;
 
 @Controller
@@ -15,15 +16,25 @@ public class AppController {
 	
 	@Autowired
 	private VendedorService vendedorService;
+	
 	@Autowired
 	private ProdutoService produtoService;
+	
 	@Autowired
 	private CalcadoService calcadoService;
+	
 	@Autowired
 	private RoupaService roupaService;
+	
+	@Autowired
+	private InformacaoService informacaoService;
 
+	
+	
 	@GetMapping(value = "/")
 	public String showHome(Model model) {
+		
+		model.addAttribute("informacoes", informacaoService.obterLista());
 		
 		model.addAttribute("qtdeVendedor", vendedorService.obterQtde());
 		model.addAttribute("qtdeProduto", produtoService.obterQtde());
